@@ -53,13 +53,18 @@ main {
 }
 
 .custom-div {
-  padding: 20px; /* Adjust padding */
-  font-size: 1.5rem; /* Set a custom font size */
-  line-height: 1; /* Adjust line height to reduce height */
-  display: inline-block; /* Makes the element's height fit content */
-  background-color: #343a40; /* Add a dark background */
-  color: #fff; /* Ensure text is visible on dark background */
-  border-radius: 5px; /* Optional: Adds rounded corners */
+  display: flex; /* Required for align-items and justify-content */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  padding: 12px;
+  font-size: 1.5rem;
+  line-height: 1;
+  background-color: #343a40;
+  color: #fff;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  text-align: center; /* Optional for extra centering, useful for multi-line text */
 }
 
 .game-board {
@@ -255,22 +260,11 @@ main {
 }
 
 .controls {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: absolute;
-  bottom: 20px; /* Adjust distance from bottom */
-  width: 100%;
-  padding: 0 20px; /* Add padding for spacing */
-}
-
-.controls {
   position: absolute;
   bottom: 3%; /* Adjust distance from the bottom */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Ensure proper centering */
   display: flex; /* Align buttons in a row */
-  gap: -2000px; /* Add spacing between buttons */
 }
 
 .controls > button {
@@ -280,8 +274,8 @@ main {
 }
 
 .controls > button > img {
-  width: 9m; /* Adjust button icon size */
-  height: 8em; /* Adjust button icon size */
+  width: 6.5em; /* Adjust button icon size */
+  height: 6.5em; /* Adjust button icon size */
 }
 
 /*------------- Responive -----------------------*/
@@ -360,7 +354,7 @@ main {
 #btnStop {
   z-index: 20;
   top: 10px;
-  width: 800px;
+  width: 300px;
 }
 
 /*------------- Login / Registration  -----------------------*/

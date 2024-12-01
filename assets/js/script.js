@@ -1,7 +1,7 @@
 let bushNumber;
 let up = false;
 let clicked = false;
-let ariaValue = 300;
+let ariaValue = 100;
 let gameInterval;
 let timeInterval;
 let decHealth = 10;
@@ -80,7 +80,7 @@ $(".monkey").on("mousedown", function () {
         $(".progress-bar").attr("aria-valuenow", ariaValue);
         $(".progress-bar").css("width", `${ariaValue}%`);
         $("#score").empty();
-        $("#score").append(`${100 - ariaValue}/300`);
+        $("#score").append(`${100 - ariaValue}/100`);
 
         if (ariaValue <= 0) {
             backgroundAudio.volume = 0;
