@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="assets/js/login.js"></script>
+</head>
+<body class="login-body">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Login Form -->
+    <img src="../assets/img/login_title.png" alt="Login" class="form-heading-image">
+    <div class="form-container" id="loginContent" style="display: none;">
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autocomplete="off">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="off">
+
+            <button type="submit" id="loginBtn">Login</button>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </form>
+    </div>
+</body>
+</html>

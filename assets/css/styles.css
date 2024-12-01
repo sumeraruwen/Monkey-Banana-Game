@@ -1,0 +1,459 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Loader styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green; /* Black background */
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+/* Spinner animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 82%;
+  border-radius: 50px;
+  background: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.custom-div {
+  padding: 20px; /* Adjust padding */
+  font-size: 1.5rem; /* Set a custom font size */
+  line-height: 1; /* Adjust line height to reduce height */
+  display: inline-block; /* Makes the element's height fit content */
+  background-color: #343a40; /* Add a dark background */
+  color: #fff; /* Ensure text is visible on dark background */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+.game-board {
+  width: 700px;
+  height: 100%;
+}
+
+.bush {
+  pointer-events: none;
+  position: absolute;
+  display: inline-block;
+}
+
+.bush-1 {
+  top: 20%;
+  left: 120px;
+  width: 200px;
+  height: 200px;
+}
+
+.bush-2 {
+  top: 20%;
+  right: 120px;
+  width: 200px;
+  height: 200px;
+}
+
+.bush-3 {
+  bottom: 10%;
+  left: 120px;
+  width: 200px;
+  height: 200px;
+}
+
+.bush-4 {
+  bottom: 10%;
+  right: 120px;
+  width: 200px;
+  height: 200px;
+}
+
+.bush-5 {
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.evaluations {
+  font-family: "Dancing Script", cursive;
+  padding-left: 5%;
+  padding-right: 10%;
+  position: absolute;
+  width: 100%;
+  top: 34px;
+}
+
+.evaluations > div:last-child {
+  color: white;
+}
+
+.progress {
+  width: 60%;
+}
+
+.bush::after {
+  z-index: 5;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/bush.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.bush::before {
+  z-index: 10;
+  content: "";
+  display: block;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.bush-1::before,
+.bush-2::before {
+  width: 60%;
+}
+
+.monkey {
+  z-index: 5;
+  pointer-events: auto;
+  position: absolute;
+  background: url("../img/ghost.png") no-repeat center center;
+  background-size: 100% 100% !important;
+  width: 50%;
+  height: 50%;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation-name: dancing;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  transition: all ease-in-out 0.5s;
+  cursor: url("../img/ban-hammer.gif"), auto;
+}
+
+.bush-1 > .monkey,
+.bush-2 > .monkey {
+  width: 60%;
+}
+
+.btn > img {
+  width: 6em;
+  height: 5em;
+}
+
+.btn:last-child > img {
+  width: 5em;
+  height: 5em;
+}
+
+.btn:last-child {
+  display: none;
+}
+
+.message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 97.5vw;
+  height: 97.5vh;
+  background-image: linear-gradient(
+    to right top,
+    #da004c,
+    #d8006e,
+    #c60097,
+    #9a00c3,
+    #1238eb
+  );
+  z-index: 10;
+  color: white;
+}
+
+.message > p {
+  font-size: 3em;
+  color: white;
+}
+
+.over {
+  width: 97.5vw;
+  height: 97.5vh;
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  background-image: linear-gradient(
+    to right top,
+    #da004c,
+    #d8006e,
+    #c60097,
+    #9a00c3,
+    #1238eb
+  );
+  gap: 20px;
+}
+
+.over > h1 {
+  color: white;
+}
+
+.over > button {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  font-size: 2em;
+  background: #0dcaf0;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  bottom: 20px; /* Adjust distance from bottom */
+  width: 100%;
+  padding: 0 20px; /* Add padding for spacing */
+}
+
+.controls {
+  position: absolute;
+  bottom: 3%; /* Adjust distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Ensure proper centering */
+  display: flex; /* Align buttons in a row */
+  gap: -2000px; /* Add spacing between buttons */
+}
+
+.controls > button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.controls > button > img {
+  width: 9m; /* Adjust button icon size */
+  height: 8em; /* Adjust button icon size */
+}
+
+/*------------- Responive -----------------------*/
+
+@keyframes dancing {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@media all and (max-width: 450px) and (min-width: 310px) {
+  main {
+    width: 95vw;
+  }
+
+  .bush-1 {
+    left: 30px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .bush-2 {
+    right: 30px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .bush-3 {
+    left: 30px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .bush-4 {
+    right: 30px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .bush-5 {
+    width: 110px;
+    height: 110px;
+  }
+
+  .monkey {
+    width: 40%;
+    height: 50%;
+    background-size: 100% 100% !important;
+    background-position: right;
+  }
+}
+
+#main-image {
+  position: absolute;
+  width: 97.5vw;
+  height: 97.5vh;
+  z-index: 10;
+  background: url("../img/main-image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#main-image > p {
+  font-size: 5em;
+  margin: 50px;
+}
+
+#btnStart {
+  z-index: 20;
+  width: 300px;
+}
+
+#btnStop {
+  z-index: 20;
+  top: 10px;
+  width: 800px;
+}
+
+/*------------- Login / Registration  -----------------------*/
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Common Background Settings */
+.login-body,
+.register-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.form-heading-image {
+  width: 400px;
+  margin-bottom: 20px;
+  display: block;
+  height: auto;
+}
+
+/* Background Images */
+.login-body,
+.register-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../img/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+/* Form Container */
+.form-container {
+  background-color: rgba(0, 100, 0, 0.85);
+  padding: 30px;
+  width: 390px;
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

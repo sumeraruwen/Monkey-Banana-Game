@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../img/background4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: green;
+  //height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.banana-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  left: 3rem;
+  right: 3em;
+  bottom: 2rem;
+  top: 4rem;
+  background-color: #f3f3f3;
+  background: url("../img/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // height: 100vh;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.banana-game img {
+  max-width: 1280px;
+  width: auto;
+  height: 40vh;
+  margintop: auto;
+}
+
+.banana-game h2 {
+  padding: 20px;
+  text-align: center;
+}
+
+.banana-game input {
+  font-size: larger;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+.banana-game button {
+  margin-top: 10px;
+  width: 200px;
+  margin-inline: auto;
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  background-color: green;
+  color: white;
+  border-radius: 0.2rem;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  animation: fade-in-out 3s forwards;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
