@@ -10,13 +10,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: green; /* Black background */
-  color: #fff; /* White text */
+  background-color: green;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 1000;
 }
 
 /* Spinner animation */
@@ -53,9 +53,9 @@ main {
 }
 
 .custom-div {
-  display: flex; /* Required for align-items and justify-content */
-  align-items: center; /* Vertical centering */
-  justify-content: center; /* Horizontal centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   font-size: 1.5rem;
   line-height: 1;
@@ -64,7 +64,7 @@ main {
   border-radius: 5px;
   width: 150px;
   height: 50px;
-  text-align: center; /* Optional for extra centering, useful for multi-line text */
+  text-align: center;
 }
 
 .game-board {
@@ -79,35 +79,35 @@ main {
 }
 
 .bush-1 {
-  top: 20%;
+  top: 23%;
   left: 120px;
   width: 200px;
   height: 200px;
 }
 
 .bush-2 {
-  top: 20%;
+  top: 23%;
   right: 120px;
   width: 200px;
   height: 200px;
 }
 
 .bush-3 {
-  bottom: 10%;
+  bottom: 13%;
   left: 120px;
   width: 200px;
   height: 200px;
 }
 
 .bush-4 {
-  bottom: 10%;
+  bottom: 13%;
   right: 120px;
   width: 200px;
   height: 200px;
 }
 
 .bush-5 {
-  top: 10%;
+  top: 13%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -261,10 +261,10 @@ main {
 
 .controls {
   position: absolute;
-  bottom: 3%; /* Adjust distance from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Ensure proper centering */
-  display: flex; /* Align buttons in a row */
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
 }
 
 .controls > button {
@@ -274,8 +274,8 @@ main {
 }
 
 .controls > button > img {
-  width: 6.5em; /* Adjust button icon size */
-  height: 6.5em; /* Adjust button icon size */
+  width: 6.5em;
+  height: 6.5em;
 }
 
 /*------------- Responive -----------------------*/
@@ -347,6 +347,11 @@ main {
 }
 
 #btnStart {
+  z-index: 20;
+  width: 300px;
+}
+
+#btnHome {
   z-index: 20;
   width: 300px;
 }
