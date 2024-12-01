@@ -328,6 +328,27 @@ function logoutUser() {
     console.log("User logged out successfully.");
 }
 
+//----------------- Home function --------------
+
+document.getElementById("btnHome").addEventListener("click", function () {
+    Swal.fire({
+        title: "Home",
+        text: "What would you like to do?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Log out",
+        cancelButtonText: "View Leaderboard",
+    }).then((result) => {
+        if (result.isConfirmed) {
+           
+            logoutUser(); 
+            window.location.href = "login.html"; 
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "leaderboard.html"; 
+        }
+    });
+});
+
 
 function timer() {
     let x = remainingTime;
