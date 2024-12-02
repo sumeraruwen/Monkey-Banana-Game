@@ -3,14 +3,14 @@
 JavaScript Game
 (Multi Level)
 
-Themes :
+**Themes** :
 
 - Version Control
 - Interoperability
 - Event-Driven Programming
 - Virtual Identity
 
-Technology Stack :
+**Technology Stack** :
 
 - JavaScript
 - HTML
@@ -20,6 +20,6 @@ Technology Stack :
 - MySQL
 - Bootstrap
 
-External APIs :
+**External APIs** :
 
 - Banana API
