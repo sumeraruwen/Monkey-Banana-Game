@@ -97,10 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Restart the game
                     window.location.href = "index.html"; 
                 } else if (result.isDenied) {
-                    // Navigate to leaderboard
+                    //  leaderboard
                     window.location.href = "leaderboard.html"; 
                 } else {
-                    // Log out
                     window.location.href = "login.html"; // Navigate 
                 }
             });

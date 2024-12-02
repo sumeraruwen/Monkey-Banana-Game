@@ -96,7 +96,7 @@ if (ariaValue <= 0) {
     clearInterval(gameInterval);
 
     if (level >= 3) {
-        const score = ariaValue; // Calculate the final score
+        const score = 300 - ariaValue; // Calculate the final score
 
         fetch("http://localhost:3000/saveScore", {
             method: "POST",
@@ -391,6 +391,8 @@ function timerAfterWon() {
     }, 1000);
 }
 
+//------------- retry -----------------------
+
 function resetGame(newLevel, newHealth) {
     clearInterval(gameInterval);
     clearInterval(timeInterval);
@@ -422,6 +424,9 @@ $(".over > button").on("click", function () {
     $(".progress-bar").css("width", `100%`);
     startGame();
 });
+
+
+//------------- Pause -----------------------
 
 $("#btnStop").on("click", function () {
     clearInterval(timeInterval);
