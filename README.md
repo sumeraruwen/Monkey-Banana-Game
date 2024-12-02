@@ -5,21 +5,21 @@ JavaScript Game
 
 Themes :
 
--Version Control
--Interoperability
--Event-Driven Programming
--Virtual Identity
+- Version Control
+- Interoperability
+- Event-Driven Programming
+- Virtual Identity
 
 Technology Stack :
 
--JavaScript
--HTML
--CSS
--NodeJS
--ExpressJS
--MySQL
--Bootstrap
+- JavaScript
+- HTML
+- CSS
+- NodeJS
+- ExpressJS
+- MySQL
+- Bootstrap
 
 External APIs :
 
--Banana API
+- Banana API
