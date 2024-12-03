@@ -425,7 +425,6 @@ $(".over > button").on("click", function () {
     startGame();
 });
 
-
 //------------- Pause -----------------------
 
 $("#btnStop").on("click", function () {
